@@ -34,6 +34,7 @@ module.exports = {
         filename: filename('js'),
         path: path.resolve(__dirname, 'dist')
     },
+    target: 'web',
     resolve: {
         extensions: ['.js'],
         alias: {
@@ -44,7 +45,8 @@ module.exports = {
     devtool: isDev ? 'source-map' : false,
     devServer: {
         port: 3000,
-        hot: isDev
+        hot: isDev,
+        watchContentBase: true,
     },
     plugins: [
         new CleanWebpackPlugin(),
