@@ -41,6 +41,6 @@ export class Excel {
     destroy() {
         this.subscriber.unsubscribeFromStore()
         this.components.forEach(component => component.destroy())
-        document.removeEventListener('contextmenu')
+        document.removeEventListener('contextmenu', preventDefault)
     }
 }
